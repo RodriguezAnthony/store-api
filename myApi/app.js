@@ -14,6 +14,14 @@ const productRouter = require('./routes/product');
 
 
 const app = express();
+const cors = require('cors');
+
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(logger('dev'));
 app.use(express.json());
